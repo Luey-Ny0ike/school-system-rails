@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :set_assignment, only: %i[show edit update destroy]
 
   # GET /assignments
   # GET /assignments.json
@@ -9,8 +9,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1
   # GET /assignments/1.json
-  def show
-  end
+  def show; end
 
   # GET /assignments/new
   def new
@@ -19,8 +18,7 @@ class AssignmentsController < ApplicationController
   end
 
   # GET /assignments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /assignments
   # POST /assignments.json
@@ -63,13 +61,14 @@ class AssignmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_assignment
-      @assignment = Assignment.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def assignment_params
-      params.require(:assignment).permit(:level_id, :subject_id, :assignment_details, :due_date, :extra_resources)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_assignment
+    @assignment = Assignment.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def assignment_params
+    params.require(:assignment).permit(:level_id, :subject_id, :assignment_details, :due_date, :extra_resources, :picture)
+  end
 end
