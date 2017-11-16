@@ -1,6 +1,22 @@
 // Place all the styles related to the teachers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card{
+  transition: 0.25s box-shadow;
+  margin: 5px;
+  padding: 4px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index:1;
+  transition: all 0.5s ease;
+  color: #4A4A4A;
+  border: 1px solid #E8E8E8;
+  .card-title{
+    padding: 12px;
+  }
+}
 .mode{
   box-sizing: border-box;
   border-style: solid;

@@ -1,5 +1,41 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid t">
+  <div class="teachers">
+    <div class="container row">
+    <% @teachers.each do|teacher|%>
+        <div class="col-md-4 card">
+          <div class="top">
+            <%= image_tag teacher.picture_url.to_s, class:"img-circle img-responsive"%>
+          </div>
+          <div class="details">
+            <div class="card-title">
+              <h4><em><strong><%= teacher.name %></strong></em></h4>
+            </div>
+            <div class="role">
+              <p><strong>Role: </strong><%= teacher.role %></p>
+            </div>
+            <div class="row other">
+              <div class="col-md-6">
+                <p><strong>Subjects:</strong></p>
+                <% teacher.subjects.each do |subject| %>
+                <li><%= subject.name%></li>
+                    <% end %>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Streams</strong></p>
+                <% teacher.streams.each do |stream| %>
+                    <li><%= stream.level.level%><%= stream.stream%></li>
+                    <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
 <h1>Teachers</h1>
 
   <% @teachers.each do |teacher| %>
