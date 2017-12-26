@@ -7,6 +7,9 @@
 <%= @assignment.assignment_details %>
 <p>Due Date:</p>
 <%= @assignment.due_date %>
+<p>Uploaded File:</p>
+<%= image_tag @assignment.picture_url.to_s, class:"img-thumbnail img-responsive"%>
+
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>
